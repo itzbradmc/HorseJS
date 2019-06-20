@@ -61,7 +61,6 @@ function newConnection(socket){
       race.horses.forEach(horse => {
           tempRaces.forEach(tempRaces => {
             tempRaces.horses.forEach(tempHorse => {
-              console.log(horse.cards.Horse + " - " + tempHorse.horse_name)
               if(horse.cards.Horse == tempHorse.horse_name){
                 horse.form = tempHorse
                 var progressData = {
@@ -75,7 +74,6 @@ function newConnection(socket){
       });
     });
 
-    socket.emit("races", tempRaces)
     socket.emit("races", races)
   }
 
